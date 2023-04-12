@@ -1,6 +1,7 @@
 import { useToggle } from "usehooks-ts";
 
 import Sidebar from "../Sidebar/Sidebar";
+import { Conversations } from "./Components/Conversations";
 
 export default function Chatbar() {
     const [open, toggleOpen] = useToggle(false);
@@ -8,9 +9,11 @@ export default function Chatbar() {
     return (
         <Sidebar
             side="left"
-            isOpen={open}
+            // isOpen={open}
+            isOpen
             toggleOpen={toggleOpen}
             addItemButtonTitle="새 채팅"
+            itemComponents={<Conversations />}
         />
     );
 }

@@ -1,10 +1,12 @@
 import { IconFolderPlus, IconPlus } from "@tabler/icons-react";
 import { CloseButton, OpenButton } from "./Components/OpenCloseButton";
+import { ReactNode } from "react";
 
 interface Props {
     isOpen: boolean;
     addItemButtonTitle: string;
     side: "left" | "right";
+    itemComponents: ReactNode;
 
     toggleOpen: () => void;
 }
@@ -13,6 +15,7 @@ export default function Sidebar({
     isOpen,
     addItemButtonTitle = "새 채팅",
     side,
+    itemComponents,
     toggleOpen,
 }: Props) {
     return isOpen ? (
@@ -44,16 +47,7 @@ export default function Sidebar({
                             <div>folder3</div>
                         </div>
                     </div>
-                    <div className="pt-2">
-                        <div
-                            id="components"
-                            className="flex flex-col w-full pt-2"
-                        >
-                            <div>chat1</div>
-                            <div>chat2</div>
-                            <div>chat3</div>
-                        </div>
-                    </div>
+                    <div className="pt-2">{itemComponents}</div>
                 </div>
                 <div id="components" className="border-t border-white">
                     options
