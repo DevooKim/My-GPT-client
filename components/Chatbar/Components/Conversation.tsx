@@ -10,12 +10,12 @@ import { MouseEventHandler, useState } from "react";
 import { useToggle } from "usehooks-ts";
 
 interface Props {
-    id: Number | String;
-    title: String;
+    id: number | string;
+    title: string;
 }
 
 export const ConversationComponent = ({ id, title }: Props) => {
-    const [renameValue, setRenameValue] = useState<String>("");
+    const [renameValue, setRenameValue] = useState<string>("");
     const [isEditing, toggleIsEditing, setIsEditing] = useToggle(false);
     const [isDeleting, toggleIsDeleting, setIsDeleting] = useToggle(false);
 
