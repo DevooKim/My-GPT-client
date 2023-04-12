@@ -15,7 +15,7 @@ interface Props {
 }
 
 export const ConversationComponent = ({ id, title }: Props) => {
-    const [renameValue, setRenameValue] = useState("");
+    const [renameValue, setRenameValue] = useState<String>("");
     const [isEditing, toggleIsEditing, setIsEditing] = useToggle(false);
     const [isDeleting, toggleIsDeleting, setIsDeleting] = useToggle(false);
 
