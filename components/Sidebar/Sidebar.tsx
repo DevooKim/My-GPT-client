@@ -6,6 +6,7 @@ interface Props {
     isOpen: boolean;
     addItemButtonTitle: string;
     side: "left" | "right";
+    folderComponents: ReactNode;
     itemComponents: ReactNode;
 
     toggleOpen: () => void;
@@ -15,6 +16,7 @@ export default function Sidebar({
     isOpen,
     addItemButtonTitle = "새 채팅",
     side,
+    folderComponents,
     itemComponents,
     toggleOpen,
 }: Props) {
@@ -38,14 +40,7 @@ export default function Sidebar({
 
                 <div className="flex-grow overflow-auto">
                     <div className="flex pb-2 border-b border-white">
-                        <div
-                            id="components"
-                            className="flex flex-col w-full pt-2"
-                        >
-                            <div>folder1</div>
-                            <div>folder2</div>
-                            <div>folder3</div>
-                        </div>
+                       {folderComponents}
                     </div>
                     <div className="pt-2">{itemComponents}</div>
                 </div>
