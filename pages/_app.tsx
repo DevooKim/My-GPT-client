@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 className={`flex h-screen w-screen flex-col text-sm `}
             >
                 <div className="fixed top-0 w-full sm:hidden">
-                    <div>navbar</div>
+                    <div>mobile navbar</div>
                 </div>
                 <div className="flex h-full w-full pt-[48px] sm:pt-0">
                     <Chatbar />
