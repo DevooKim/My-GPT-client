@@ -28,6 +28,9 @@
     height: 6px;
 }
 
-html body {
+html,
+body {
     background-color: #31313e;
+    /* position: fixed; */
+    overflow: hidden;
 }

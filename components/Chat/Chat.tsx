@@ -8,7 +8,7 @@ interface Props {
 
 export default function Chat({ item }: Props) {
     return (
-        <div className="relative flex-1 overflow-hidden">
+        <div className="relative flex-1 overflow-hidden bg-mygpt">
             <div className="max-h-full overflow-x-hidden">
                 {!item.length ? (
                     <div className="mx-auto flex w-[350px] flex-col pt-12 sm:w-[600px]">
@@ -20,14 +20,14 @@ export default function Chat({ item }: Props) {
                         </div>
                     </div>
                 ) : (
-                    <div>
+                    <>
                         {item.map((v, index) => (
                             <ChatMessage key={index} message={v} />
                         ))}
                         <div
                             className="h-[172px] bg-white dark:bg-[#343541]"
                         />
-                    </div>
+                    </>
                 )}
             </div>
             <ChatInput />
