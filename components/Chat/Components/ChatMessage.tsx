@@ -1,4 +1,11 @@
-export function ChatMessage({ message }) {
+interface Props {
+    message: {
+        role: string;
+        content: string;
+    };
+}
+
+export function ChatMessage({ message }: Props) {
     return (
         <div
             className={`${
