@@ -1,7 +1,8 @@
-import { IconSend } from "@tabler/icons-react";
-import { useRef } from "react";
+import { IconSend, IconLoader2 } from "@tabler/icons-react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ChatInput() {
+    const [isLoading, setIsLoading] = useState<boolean>(false);
     const textareaRef = useRef<HTMLTextAreaElement>(null);
 
     const handleInput = () => {
@@ -10,6 +11,13 @@ export default function ChatInput() {
         textarea.style.height = "auto";
         textarea.style.height = `${textarea.scrollHeight}px`;
     };
+
+    const dummyLoading = () => setIsLoading((p) => !p);
+    useEffect(() => {
+        if (isLoading) {
+            setTimeout(() => setIsLoading(false), 3000);
+        }
+    }, [isLoading]);
 
     return (
         <div className="absolute bottom-0 left-0 w-full pt-6 border-transparent bg-gradient-to-b from-transparent via-white to-white dark:border-white/20 dark:via-mygpt-second dark:to-mygpt">
@@ -22,8 +30,16 @@ export default function ChatInput() {
                         onInput={handleInput}
                         rows={1}
                     />
-                    <button className="absolute p-1 rounded-sm right-2 top-2 text-white/60">
-                        <IconSend size={18} />
+                    <button
+                        className="absolute p-1 rounded-sm right-2 top-2 text-white/60"
+                        disabled={isLoading}
+                        onClick={dummyLoading}
+                    >
+                        {isLoading ? (
+                            <IconLoader2 className="animate-spin" size={18} />
+                        ) : (
+                            <IconSend size={18} />
+                        )}
                     </button>
                 </div>
             </div>
