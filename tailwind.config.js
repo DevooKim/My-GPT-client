@@ -9,11 +9,12 @@ module.exports = {
         extend: {
             colors: {
                 sidebar: "#22232D",
+                mygpt: "#31313E",
             },
         },
     },
     plugins: [require("daisyui")],
     daisyui: {
-        theme: false,
+        themes: false,
     },
 };

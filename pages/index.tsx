@@ -23,8 +23,8 @@ export default function Home() {
 
     return (
         <div className="flex justify-center w-full">
-            <button className="fixed bottom-4" onClick={toggle}>
-                toggle
+            <button className="fixed z-10 text-white right-4" onClick={toggle}>
+                dummy-toggle
             </button>
             <Chat item={dummy} />
         </div>
