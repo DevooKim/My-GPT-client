@@ -8,12 +8,22 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                sidebar: "#22232D",
+                mygpt: {
+                    DEFAULT: "#31313E",
+                    primary: "#31313E",
+                    second: "#363645",
+                    
+                },
+                sidebar: {
+                    DEFAULT: "#22232D",
+                    primary: "#22232D",
+                    second: "#323442",
+                }
             },
         },
     },
     plugins: [require("daisyui")],
     daisyui: {
-        theme: false,
+        themes: false,
     },
 };

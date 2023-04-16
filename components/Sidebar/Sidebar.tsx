@@ -22,13 +22,13 @@ export default function Sidebar({
 }: Props) {
     return isOpen ? (
         <div>
-            <div className="text-white top-0 fixed z-50 flex h-full w-[260px] flex-none flex-col space-y-2 p-2 text-[14px] transition-all sm:relative sm:top-0 bg-sidebar">
+            <div className="text-white top-0 fixed z-50 flex h-full w-[260px] flex-none flex-col space-y-2 p-2 text-[14px] transition-all sm:relative sm:top-0  bg-sidebar">
                 <div className="flex items-center">
-                    <button className="flex items-center justify-start flex-1 flex-shrink-0 gap-3 text-white select-none w-100 btn btn-outline hover:text-white hover:bg-sidebar/20">
+                    <button className="flex items-center justify-start flex-1 flex-shrink-0 gap-3 text-white select-none w-100 btn btn-outline hover:bg-sidebar-second hover:border-inherit">
                         <IconPlus size={16} />
                         {addItemButtonTitle}
                     </button>
-                    <button className="flex items-center flex-shrink-0 gap-3 ml-2 text-white select-none w-100 btn btn-outline hover:text-white hover:bg-sidebar/20">
+                    <button className="flex items-center flex-shrink-0 gap-3 ml-2 text-white select-none w-100 btn btn-outline hover:bg-sidebar-second hover:border-inherit">
                         <IconFolderPlus size={16} />
                     </button>
                 </div>
@@ -40,7 +40,7 @@ export default function Sidebar({
 
                 <div className="flex-grow overflow-auto">
                     <div className="flex pb-2 border-b border-white">
-                       {folderComponents}
+                        {folderComponents}
                     </div>
                     <div className="pt-2">{itemComponents}</div>
                 </div>
