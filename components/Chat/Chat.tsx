@@ -24,6 +24,9 @@ export default function Chat({ item }: Props) {
                         {item.map((v, index) => (
                             <ChatMessage key={index} message={v} />
                         ))}
+                        <div
+                            className="h-[172px] bg-white dark:bg-[#343541]"
+                        />
                     </div>
                 )}
             </div>

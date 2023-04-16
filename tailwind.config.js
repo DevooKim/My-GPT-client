@@ -8,8 +8,12 @@ module.exports = {
     theme: {
         extend: {
             colors: {
-                sidebar: "#22232D",
-                mygpt: "#31313E",
+                mygpt: {
+                    DEFAULT: "#31313E",
+                    primary: "#31313E",
+                    second: "#363645",
+                    sidebar: "#22232D",
+                },
             },
         },
     },
