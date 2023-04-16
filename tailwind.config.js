@@ -12,8 +12,13 @@ module.exports = {
                     DEFAULT: "#31313E",
                     primary: "#31313E",
                     second: "#363645",
-                    sidebar: "#22232D",
+                    
                 },
+                sidebar: {
+                    DEFAULT: "#22232D",
+                    primary: "#22232D",
+                    second: "#323442",
+                }
             },
         },
     },
