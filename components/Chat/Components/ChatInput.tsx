@@ -8,8 +8,11 @@ export default function ChatInput() {
     const handleInput = () => {
         const textarea = textareaRef.current;
         if (!textarea) return;
-        textarea.style.height = "auto";
+        textarea.style.height = "inherit";
         textarea.style.height = `${textarea.scrollHeight}px`;
+        textarea.style.overflow = `${
+            textarea.scrollHeight > 400 ? "auto" : "hidden"
+        }`;
     };
 
     const dummyLoading = () => setIsLoading((p) => !p);
@@ -22,10 +25,10 @@ export default function ChatInput() {
     return (
         <div className="absolute bottom-0 left-0 w-full pt-6 border-transparent bg-gradient-to-b from-transparent via-white to-white dark:border-white/20 dark:via-mygpt-second dark:to-mygpt">
             <div className="stretch mx-2 mt-4 flex flex-row gap-3 last:mb-2 md:mx-4 md:mt-[52px] md:last:mb-6 lg:mx-auto lg:max-w-3xl">
-                <div className="flex relative mx-2 w-full bg-[#56606E] rounded-md">
+                <div className="flex relative mx-2 w-full bg-[#56606E] rounded-md focus-within:border focus-within:rounded-md">
                     <textarea
                         ref={textareaRef}
-                        className="drop-shadow-md max-h-[400px] w-full py-3 pl-5 text-white bg-transparent border-0 resize-none pr-9 outline-0 focus-visible:border focus-visible:rounded-md"
+                        className="asdf overflow-auto drop-shadow-md max-h-[400px] w-full my-3 pl-5 text-white bg-transparent border-0 resize-none pr-9 outline-0"
                         placeholder="Input"
                         onInput={handleInput}
                         rows={1}
