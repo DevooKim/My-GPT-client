@@ -1,28 +1,16 @@
 import { ConversationComponent } from "./Conversation";
 
-const tempList = [
-    {
-        id: 1,
-        title: "title1",
-    },
-    {
-        id: 2,
-        title: "title2",
-    },
-    {
-        id: 3,
-        title: "title3",
-    },
-];
-
-export const Conversations = () => {
+interface Props {
+    conversations: any[];
+}
+export const Conversations = ({ conversations }: Props) => {
     return (
         <>
-            {tempList.map((temp) => (
+            {conversations.map((conversation) => (
                 <ConversationComponent
-                    key={temp.id}
-                    id={temp.id}
-                    title={temp.title}
+                    key={conversation.id}
+                    id={conversation.id}
+                    title={conversation.name}
                 />
             ))}
         </>

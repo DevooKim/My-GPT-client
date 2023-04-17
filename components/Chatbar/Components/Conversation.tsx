@@ -6,6 +6,7 @@ import {
     IconTrash,
     IconX,
 } from "@tabler/icons-react";
+import Link from "next/link";
 import { MouseEventHandler, useState } from "react";
 import { useToggle } from "usehooks-ts";
 
@@ -45,14 +46,16 @@ export const ConversationComponent = ({ id, title }: Props) => {
                     />
                 </div>
             ) : (
-                <button className="flex items-center w-full gap-3 px-3 border-0 btn btn-ghost hover:bg-sidebar-second">
-                    <IconMessage size={18} />
-                    <div
-                        className={`relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3`}
-                    >
-                        {title}
-                    </div>
-                </button>
+                <Link href={`/${id}`}>
+                    <button className="flex items-center w-full gap-3 px-3 border-0 btn btn-ghost hover:bg-sidebar-second">
+                        <IconMessage size={18} />
+                        <div
+                            className={`relative max-h-5 flex-1 overflow-hidden text-ellipsis whitespace-nowrap break-all text-left text-[12.5px] leading-3`}
+                        >
+                            {title}
+                        </div>
+                    </button>
+                </Link>
             )}
             {(isEditing || isDeleting) && (
                 <div className="absolute right-1">
