@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Chatbar from "../components/Chatbar/Chatbar";
 import Head from "next/head";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
@@ -16,8 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
                 className="flex flex-col flex-1 h-full max-w-full"
                 style={{ height: "100dvh" }}
             >
-                <div className="sticky top-0 w-full text-white border border-white sm:hidden">
-                    <div>mobile - mobile - mobile</div>
+                <div className="sticky top-0 w-full text-white sm:hidden">
+                    <Navbar />
                 </div>
                 <main className="relative flex flex-col w-screen h-screen overflow-hidden">
                     <div className="flex w-full h-full sm:pt-0">

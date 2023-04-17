@@ -18,7 +18,7 @@ export const CloseButton = ({ side, onClick }: Props) => {
     return (
         <div>
             <button
-                className={`fixed top-4 ${closeButtonXPosition[side]} z-50 text-white`}
+                className={`fixed top-1.5 h-7 w-7 ${closeButtonXPosition[side]} z-50 text-white max-sm:hidden`}
                 onClick={onClick}
             >
                 {side === "right" ? (
@@ -28,7 +28,7 @@ export const CloseButton = ({ side, onClick }: Props) => {
                 )}
             </button>
             <div
-                className="absolute top-0 left-0 z-10 w-full h-full bg-black opacity-70 sm:hidden"
+                className="fixed top-0 left-0 z-10 w-full h-full bg-black opacity-70 sm:hidden"
                 onClick={onClick}
             ></div>
         </div>
@@ -37,7 +37,7 @@ export const CloseButton = ({ side, onClick }: Props) => {
 export const OpenButton = ({ side, onClick }: Props) => {
     return (
         <button
-            className={`fixed z-50 text-white top-4 ${openButtonXPosition[side]}`}
+            className={`fixed z-50 text-white top-1.5 h-7 w-7 ${openButtonXPosition[side]} sm:top-4 sm:h-6 sm:w-6`}
             onClick={onClick}
         >
             {side === "right" ? <IconArrowBarLeft /> : <IconArrowBarRight />}
