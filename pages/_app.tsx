@@ -1,24 +1,34 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Chatbar from "../components/Chatbar/Chatbar";
+import Head from "next/head";
+import Navbar from "@/components/Navbar/Navbar";
 
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
-            <main
-                // className={`flex h-screen w-screen flex-col text-sm text-white dark:text-white ${lightMode}`}
-                className={`flex h-screen w-screen flex-col text-sm `}
+            <Head>
+                <meta
+                    name="viewport"
+                    content="height=device-height, width=device-width, initial-scale=1, user-scalable=no"
+                />
+            </Head>
+            <div
+                className="flex flex-col flex-1 h-full max-w-full"
+                style={{ height: "100dvh" }}
             >
-                <div className="fixed top-0 w-full sm:hidden">
-                    <div>mobile navbar</div>
+                <div className="sticky top-0 w-full text-white sm:hidden">
+                    <Navbar />
                 </div>
-                <div className="flex h-full w-full pt-[48px] sm:pt-0">
-                    <Chatbar />
-                    <div className="flex flex-1">
-                        <Component {...pageProps} />
+                <main className="relative flex flex-col w-screen h-screen overflow-hidden">
+                    <div className="flex w-full h-full sm:pt-0">
+                        <Chatbar />
+                        <div className="flex flex-1">
+                            <Component {...pageProps} />
+                        </div>
                     </div>
-                </div>
-            </main>
+                </main>
+            </div>
         </>
     );
 }

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 const defaultTemp = 0.8;
 
@@ -6,7 +6,7 @@ export default function TemperatureSlider() {
     const [t, setT] = useState(defaultTemp);
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) =>
         setT(parseFloat(e.target.value));
-  
+
     return (
         <div className="flex flex-col">
             <label className="mb-2 text-neutral-50">Temperature</label>
@@ -18,7 +18,7 @@ export default function TemperatureSlider() {
                 {t.toFixed(1)}
             </span>
             <input
-                className={`pr-6 cursor-pointer accent-blue-600`}
+                className={`cursor-pointer accent-blue-600`}
                 type="range"
                 min={0}
                 max={1}
