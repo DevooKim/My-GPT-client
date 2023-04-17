@@ -25,7 +25,7 @@ export default function Chat({ item }: Props) {
                             <ChatMessage key={index} message={v} />
                         ))}
                         <div
-                            className="h-[172px] bg-white dark:bg-[#343541]"
+                            className="h-[172px] bg-[#343541]"
                         />
                     </>
                 )}
